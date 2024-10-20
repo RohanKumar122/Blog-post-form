@@ -32,6 +32,10 @@ const IdeaSchema = new mongoose.Schema({
 // Specify the collection name as 'users'
 const Idea = mongoose.model('Idea', IdeaSchema, 'users'); 
 
+app.get('/', (req, res) => {
+    res.status(200).json({ message: "Service is running..." });  
+})
+
 // POST route to create a new idea
 app.post('/api/ideas', async (req, res) => {
     try {

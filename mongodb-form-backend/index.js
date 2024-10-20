@@ -19,6 +19,7 @@ mongoose.connect(process.env.MONGO_URI, {
     console.error('MongoDB connection error:', err);
 });
 
+
 const IdeaSchema = new mongoose.Schema({
     heading: String,
     para: String,

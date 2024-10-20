@@ -1,5 +1,3 @@
-// server.js
-
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -21,7 +19,6 @@ mongoose.connect(process.env.MONGO_URI, {
     console.error('MongoDB connection error:', err);
 });
 
-// Define a Schema and Model
 const IdeaSchema = new mongoose.Schema({
     heading: String,
     para: String,
@@ -29,7 +26,7 @@ const IdeaSchema = new mongoose.Schema({
     createdAt: { type: Date, default: Date.now }
 });
 
-// Specify the collection name as 'users'
+
 const Idea = mongoose.model('Idea', IdeaSchema, 'users'); 
 
 app.get('/', (req, res) => {
